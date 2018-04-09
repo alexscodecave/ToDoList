@@ -1,0 +1,64 @@
+﻿
+.addBoxShadow {
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.toggledHeightAnimation {
+    
+}
+
+.makeDivBoxThreeD {
+    
+}
+
+.blueBorder {
+    border: 2px solid blue;
+}
+
+.makeBorderEdgesCurved {
+    margin-top: 10px;
+}
+
+.styleDynamicDiv {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border-radius: 3px;
+    width: 150px;
+    height: 150px;
+}
+
+.pocket {
+    height: 200px;
+    border-radius: 3px;
+}
+
+.redPocket {
+    background: linear-gradient(red,yellow);
+    
+}
+
+.greenPocket {
+    background-color: green;
+}
+
+.yellowPocket {
+    background-color: yellow;
+}
+
+.bluePocket {
+    background-color: lightblue;
+}
+
+#block {
+    background: green;
+    height: 100px;
+    width: 100px;
+}
+
+.footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.highlight {
+    background-color: yellow;
+}

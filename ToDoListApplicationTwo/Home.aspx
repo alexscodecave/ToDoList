@@ -27,7 +27,7 @@
                     <a class="navbar-brand" href="#">Home</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Settings</a></li>
+                    <li><a href="Settings.aspx">Settings</a></li>
                     <li><a href="#"></a></li>
                 </ul>
             </div>
@@ -95,13 +95,7 @@
                 <label id="updatedInDatabaseText">Value updated in database!</label>
             </div>
         </div>
-        <div class="row">
-            <div class="offset-3"></div>
-            <div class="col-md-6 text-center">
-                <button type="button" class=" btn btn-primary slideDownPageTwo">Slide Down</button>
-            </div>
-        </div>
-        
+
         
 
     </form>

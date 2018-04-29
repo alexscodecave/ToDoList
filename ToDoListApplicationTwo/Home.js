@@ -1,4 +1,64 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
+
+    if (!('webkitSpeechRecognition' in window)) {
+        console.log("Not supported in browser");
+    }
+    else {
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        console.log("This is supported in the browser");
+
+        recognition.onstart = function() {
+            console.log("has started");
+        }
+
+        recognition.onresult = (event) => {
+            var current = event.resultIndex;
+
+            var transcript = event.results[current][0].transcript;
+            $(".textNote").html(transcript);
+            console.log(transcript);
+        }
+
+        recognition.onend = (event) => {
+            console.log("Speech recognition finished");
+        }
+
+    }
+
+    //function to do a continuous fade in fade out while user is speaking
+    function continuousFade() {
+        //slow fade out of this element ID inside the fadeout perform a fade in, then when the element fades in again run the same function
+        $("#showWhenListening").fadeOut("slow",
+            function() {
+                $("#showWhenListening").fadeIn(function() {
+                    $("#showWhenListening").fadeIn("slow",
+                        function() {
+                            $("#showWhenListening").fadeOut(continuousFade());
+                        });
+                });
+            });
+    }
+
+    $("#btnOpenSpeech").on("click",
+        function() {
+            recognition.start();
+            $("#showWhenListening").css("display", "inline");
+            continuousFade();
+
+
+        });
+
+    $("#btnStopSpeech").on("click",
+        function() {
+            recognition.stop();
+            $("#showWhenListening").css("display", "inline");
+            $("#showWhenListening").stop();
+            
+
+        });
+    
     retrieveNotesFromDB(); //retrieve previously added notes from the database
     //getReminder();
     $(function() {

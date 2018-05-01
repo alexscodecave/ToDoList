@@ -1,5 +1,19 @@
 ﻿$(document).ready(function () {
 
+    //SIDE NAVIGATION BAR FUNCTIONALITY
+    /*
+        * 
+            *
+               */
+    
+
+    $('[id$="setReminder"]').on("click",
+        function() {
+            $("#dateTimePicker").datepicker();
+        });
+
+
+
     if (!('webkitSpeechRecognition' in window)) {
         console.log("Not supported in browser");
     }
@@ -421,14 +435,14 @@ function retrieveNotesFromDB() {
 
             $.each(msgData,
                 function (index, value) {
-                    var containerHTML = '<div class="row col-md-2">';
+                    var containerHTML = '<table>';
                     containerHTML =
                         containerHTML +
-                    '<div  class="draggable dynamicNote makeBorderEdgesCurved styleDynamicDiv draggable makeDivBoxThreeD" data-note-id=' +value.NoteID +' data-note-from-db=' +
+                    '<td><div class="draggable dynamicNote makeBorderEdgesCurved styleDynamicDiv draggable makeDivBoxThreeD" data-note-id=' +value.NoteID +' data-note-from-db=' +
                         (index + 1) +
                         '>' +
                         value.NoteContent +
-                        '</div></div>';
+                        '</div></td></tr></table>';
                     //adding id dynamically
                     console.log(msgData);
                     
